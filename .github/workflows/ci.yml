@@ -17,4 +17,4 @@ jobs:
         run: docker build -t fastmcp-time-server .
 
       - name: Run tests in Docker
-        run: docker run --rm fastmcp-time-server uv run pytest test_time_server.py
+        run: docker run --rm fastmcp-time-server uv run pytest

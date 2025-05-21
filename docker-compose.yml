@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   time-server:
     build: .
@@ -7,4 +6,4 @@ services:
     stdin_open: true # Equivalent to docker run -i
     tty: true        # Equivalent to docker run -t
     # To run tests instead of the default CMD, you can override the command:
-    # command: ["uv", "run", "pytest", "test_time_server.py"]
+    # command: ["uv", "run", "pytest", "tests/test_time_server.py"]
