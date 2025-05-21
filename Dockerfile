@@ -14,8 +14,8 @@ COPY requirements.txt .
 RUN uv pip install --system -r requirements.txt
 
 # Copy the application and test files into the container
-COPY time_server.py .
-COPY test_time_server.py .
+COPY src/time_server.py src/
+COPY tests/test_time_server.py tests/
 
 # Set the default command to run the server
-CMD ["python", "time_server.py"]
+CMD ["python", "src/time_server.py"]
