@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ] # Or your default branch
+  pull_request:
+    branches: [ main ] # Or your default branch
+
+jobs:
+  test-in-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t fastmcp-time-server .
+
+      - name: Run tests in Docker
+        run: docker run --rm fastmcp-time-server uv run pytest test_time_server.py
